@@ -4,10 +4,9 @@
  * @author Joris Timmerman
  * @version 1.0
  * 
- * GoogleWeather - Search the current weather conditions for a given city
- * This uses the weather services provided by Google
- * Build by Joris Timmerman, these classes uses the Google Ajax API
- *  * 
+ * GoogleWeather - Search for current weather conditions and forecast for a given city in a country in a certain language
+ * Build by Joris Timmerman, these classes uses the Google Weather API
+ * 
  * SPECIAL THANKS TO GOOGLE FOR PROVIDING THE WEATHER API
  * THIS IS AN OPEN SOURCE PROJECT DELIVERED BY BOULEVART NV (www.boulevart.be)
  */
@@ -29,7 +28,7 @@ package be.boulevart.google
 	public class GoogleWeather extends EventDispatcher
 	{
 		/**
-		 * Search a given city in a country (optional) and get the data in a certain language.
+		 * Search a given city in a country (optional) and get the data in a certain language (optional).
 		 * On result, the data in the event is a GoogleWeather object
 		 * @param city City to get the weather for
 		 * @param country (Optional) The country where the city is in
