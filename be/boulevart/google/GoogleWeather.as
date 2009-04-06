@@ -2,7 +2,7 @@
  * GOOGLE SEARCH AS3 Library
  * /**
  * @author Joris Timmerman
- * @version 1.0
+ * @version 1.3.1
  * 
  * GoogleWeather - Search for current weather conditions and forecast for a given city in a country in a certain language
  * Build by Joris Timmerman, these classes uses the Google Weather API
