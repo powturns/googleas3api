@@ -8,6 +8,9 @@
  * Build by Joris Timmerman, these classes uses the Google Weather API
  * 
  * SPECIAL THANKS TO GOOGLE FOR PROVIDING THE WEATHER API
+ * THANKS TO SVEN DENS FOR DISCOVERING THE WEBSERVICE
+ * THANKS TO DENNIS JAAMAN FOR BUILDING AN AS3 LIBRARY WHERE THIS CLASS I BASED UPON, for more information, check his blog: http://dennisjaamann.com/blog/?p=49
+ * 
  * THIS IS AN OPEN SOURCE PROJECT DELIVERED BY BOULEVART NV (www.boulevart.be)
  */
 package be.boulevart.google
@@ -16,7 +19,6 @@ package be.boulevart.google
 	import be.boulevart.google.data.types.GoogleWeatherCurrentCondition;
 	import be.boulevart.google.data.types.GoogleWeatherForecastConditions;
 	import be.boulevart.google.data.types.GoogleWeatherForecastInformation;
-	import be.boulevart.google.events.GoogleSearchEvent;
 	import be.boulevart.google.events.GoogleWeatherEvent;
 	
 	import flash.events.Event;
@@ -27,6 +29,8 @@ package be.boulevart.google
 
 	public class GoogleWeather extends EventDispatcher
 	{
+		private var _useProxy:Boolean=false;
+		
 		/**
 		 * Search a given city in a country (optional) and get the data in a certain language (optional).
 		 * On result, the data in the event is a GoogleWeather object
@@ -35,6 +39,7 @@ package be.boulevart.google
 		 * @param langCode code for the language to return data in, f.e 'nl'
 		 */
 		public function search(city:String,country:String="",langCode:String=""):void{
+			
 			var url:String="http://www.google.com/ig/api?weather="+city
 			
 			if(country!=""){
@@ -43,6 +48,10 @@ package be.boulevart.google
 			
 			if(langCode!=""){
 				url+="&hl="+langCode
+			}
+			
+			if(useProxy){
+				url="http://www.joristimmerman.be/proxy/proxy.php?url="+url
 			}
 			
 			var loader : URLLoader = new URLLoader()
@@ -55,7 +64,7 @@ package be.boulevart.google
 		
 		private function onWeatherResponse(e:Event):void{
 			var data:XML=XML(e.target.data)
-
+			trace(data)
 			if(!(data.children()[0].name() == "problem_cause")){
 				var fi:GoogleWeatherForecastInformation= loadForecastInfoData(data.weather.forecast_information[0]);
 				var cc:GoogleWeatherCurrentCondition = loadCurrentConditionData(data.weather.current_conditions[0]);
@@ -75,9 +84,9 @@ package be.boulevart.google
 			var latitude:String = String(xml.latitude.@data);
 			var longitude:String = String(xml.longitude.@data);	
 			var now:Date= new Date();
-			var eenheid:String = String(xml.unit_system.@data);
+			var unit:String = String(xml.unit_system.@data);
 
-			return new GoogleWeatherForecastInformation(stad,postcode,latitude,longitude,forecastDate,now,eenheid);
+			return new GoogleWeatherForecastInformation(stad,postcode,latitude,longitude,forecastDate,now,unit);
 		}
 		
 		
@@ -86,12 +95,17 @@ package be.boulevart.google
 			var temperureInFahrenheit:int = int(xml.temp_f.@data);
 			var temperureInCelcius:int = int(String(xml.temp_c.@data));
 			var vocht:uint = uint((xml.humidity.@data).match(/\d+/g));
-			var icoon:String = "http://www.google.com/ig"+String(xml.icon.@data);
-			var str:String = xml.wind_condition.@data
-			var windRichiting:String = String((xml.wind_condition.@data).match(/[A-Z]+ /g)).replace(/ /g,"");
-			var windSnelheid:uint = uint((xml.wind_condition.@data).match(/\d+/g));
 			
-			return new GoogleWeatherCurrentCondition(beschrijving,temperureInFahrenheit,temperureInCelcius,vocht,windRichiting,windSnelheid,icoon);
+			var icon:String = "";
+			if(String(xml.icon.@data)!=""){
+				icon="http://www.google.com/ig"+String(xml.icon.@data);
+			}
+			
+			var wind:String = xml.wind_condition.@data
+			var windDirection:String = String(wind.match(/[A-Z]+ /g)).replace(/ /g,"");
+			var windSpeed:uint = uint(wind.match(/\d+/g));
+			
+			return new GoogleWeatherCurrentCondition(beschrijving,temperureInFahrenheit,temperureInCelcius,vocht,wind,windDirection,windSpeed,icon);
 		}
 		
 		
@@ -114,6 +128,15 @@ package be.boulevart.google
 		private function onIOError(event : IOErrorEvent) : void {  
 			dispatchEvent(new GoogleWeatherEvent(GoogleWeatherEvent.IO_ERROR , "IOERROR: " + event.text))
 		} 
+		
+		
+		public function set useProxy(proxy:Boolean):void{
+			_useProxy=proxy;
+		}
+		
+		public function get useProxy():Boolean{
+			return _useProxy;
+		}
 		
 	}
 }

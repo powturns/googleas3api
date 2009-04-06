@@ -6,17 +6,19 @@ package be.boulevart.google.data.types
 		private var _tempInF:int;
 		private var _tempInC:int;
 		private var _windDir:String;
+		private var _windSum:String;
 		private var _windSpeed:uint;
 		private var _icon:String;
 		private var _condition:String;
 		
 		public function GoogleWeatherCurrentCondition(condition:String,temperatureInFahrenheit:int,temperatureInCelsius:int,humidity:uint,
-																				windDirection:String,windSpeed:uint,icon:String)
+																				wind:String,windDirection:String,windSpeed:uint,icon:String)
 		{
 			_condition = condition;
 			_tempInF = temperatureInFahrenheit;
 			_tempInC = temperatureInCelsius;
 			_humidity = humidity;
+			_windSum=wind;
 			_windDir = windDirection;
 			_windSpeed = windSpeed;
 			_icon = icon;
@@ -40,6 +42,10 @@ package be.boulevart.google.data.types
 		
 		public function get windDirection():String{
 			return _windDir;
+		}
+		
+		public function get wind():String{
+			return _windSum;
 		}
 		
 		public function get windSpeed():uint{
