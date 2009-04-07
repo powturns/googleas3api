@@ -2,7 +2,7 @@
  * GOOGLE SEARCH AS3 Library
  * /**
  * @author Joris Timmerman
- * @version 1.3.1
+ * @version 1.4
  * 
  * GoogleWeather - Search for current weather conditions and forecast for a given city in a country in a certain language
  * Build by Joris Timmerman, these classes uses the Google Weather API
@@ -19,7 +19,7 @@ package be.boulevart.google
 	import be.boulevart.google.data.types.GoogleWeatherCurrentCondition;
 	import be.boulevart.google.data.types.GoogleWeatherForecastConditions;
 	import be.boulevart.google.data.types.GoogleWeatherForecastInformation;
-	import be.boulevart.google.events.GoogleWeatherEvent;
+	import be.boulevart.google.events.GoogleSearchEvent;
 	
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
@@ -69,10 +69,11 @@ package be.boulevart.google
 				var fi:GoogleWeatherForecastInformation= loadForecastInfoData(data.weather.forecast_information[0]);
 				var cc:GoogleWeatherCurrentCondition = loadCurrentConditionData(data.weather.current_conditions[0]);
 				var fcc:Array = loadForecastConditionsData(data.weather.forecast_conditions);
+				
 				var googleWeather:GoogleWeatherData = new GoogleWeatherData(fi,cc,fcc);
-				dispatchEvent(new GoogleWeatherEvent(GoogleWeatherEvent.WEATHER_RESULT , googleWeather))
+				dispatchEvent(new GoogleSearchEvent(GoogleSearchEvent.WEATHER_RESULT , googleWeather))
 			}else{
-				dispatchEvent(new GoogleWeatherEvent(GoogleWeatherEvent.API_ERROR , "GoogleWeather API returned an error! Location not found or server error."))
+				dispatchEvent(new GoogleSearchEvent(GoogleSearchEvent.WEATHER_API_ERROR , "GoogleWeather API returned an error! Location not found or server error."))
 			}	
 		}
 		
@@ -126,7 +127,7 @@ package be.boulevart.google
 		}
 		
 		private function onIOError(event : IOErrorEvent) : void {  
-			dispatchEvent(new GoogleWeatherEvent(GoogleWeatherEvent.IO_ERROR , "IOERROR: " + event.text))
+			dispatchEvent(new GoogleSearchEvent(GoogleSearchEvent.ON_ERROR , "IOERROR: " + event.text))
 		} 
 		
 		
