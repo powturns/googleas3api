@@ -18,9 +18,9 @@ package be.boulevart.google.apicore {
 		//- PRIVATE & PROTECTED VARIABLES -------------------------------------------------------------------------
 
 		
-		
+		//Sign up for you API key at: http://code.google.com/intl/us-en/apis/ajaxsearch/signup.html
 		//- PUBLIC & INTERNAL VARIABLES ---------------------------------------------------------------------------
-		public static const API_KEY : String = "ABQIAAAAJjoQAkGmq5qsa0PKk9Y6nxQdF2TG78juI7gyCxAZXlcasg4lQxTlaYHDB6IKUESWIPTqiJvXPeiwhg"
+		public static const API_KEY : String = "<insert API key here>"
 		//- CONSTRUCTOR	-------------------------------------------------------------------------------------------
 	
 		//- PRIVATE & PROTECTED METHODS ---------------------------------------------------------------------------
@@ -29,7 +29,7 @@ package be.boulevart.google.apicore {
 		
 		//- PUBLIC & INTERNAL METHODS -----------------------------------------------------------------------------
 		public static function get apiKeyUrlQuery() : String {
-			if(API_KEY == "") {
+			if(API_KEY == "" || API_KEY=="<insert API key here>") {
 				return "";
 			}else {
 				return "&key=" + API_KEY;
