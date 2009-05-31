@@ -14,6 +14,6 @@ package be.boulevart.google.ajaxapi.translation.data {
 
 		public function set from(_from : String) : void {			__from = _from;		}
 
-		public function get to() {			return __to;		}
+		public function get to() :String{			return __to;		}
 
-		public function set to(_to) : void {			__to = _to;		}	}}
+		public function set to(_to:String) : void {			__to = _to;		}	}}
