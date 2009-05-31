@@ -19,7 +19,7 @@ package be.boulevart.google.events {
 			return this._errorID;
 		}
 
-		public function toString() : String {
+		public override function toString() : String {
 			return 	"Google API Error:: " + text + " (responseStatus: " + responseStatus + ")\n" + 
 					"Please check your search query.\n" +
 					"Error-details:";
