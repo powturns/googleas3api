@@ -4,7 +4,7 @@ package be.boulevart.google.events {
 	 * @author joris
 	 */
 	public class GoogleAPIErrorEvent extends Error {
-		public function GoogleAPIErrorEvent(message = "", id = 0) {
+		public function GoogleAPIErrorEvent(message:String = "", id:int = 0) {
 			super(message , id);
 		}
 

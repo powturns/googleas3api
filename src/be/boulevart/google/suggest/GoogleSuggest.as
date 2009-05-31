@@ -26,8 +26,8 @@ package be.boulevart.google.suggest {
 		 * Will deliver 10 results max
 		 * @param searchTerm search string, get suggestions for...
 		 */		
-		public function suggest(searchTerm : String) {
-			var serviceURL = "http://google.com/complete/search"
+		public function suggest(searchTerm : String):void {
+			var serviceURL:String = "http://google.com/complete/search"
 			
 			var loader : URLLoader = new URLLoader()
 			var query : String = "?"
