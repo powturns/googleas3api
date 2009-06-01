@@ -21,7 +21,7 @@ package be.boulevart.google.apicore {
 		
 		//Sign up for you API key at: http://code.google.com/intl/us-en/apis/ajaxsearch/signup.html
 		//- PUBLIC & INTERNAL VARIABLES ---------------------------------------------------------------------------
-		public static const API_KEY : String = "<insert API key here>"
+		public static var API_KEY : String = "<insert API key here>"
 
 		//- CONSTRUCTOR	-------------------------------------------------------------------------------------------
 	
@@ -30,6 +30,14 @@ package be.boulevart.google.apicore {
 		
 		
 		//- PUBLIC & INTERNAL METHODS -----------------------------------------------------------------------------
+		public static function setAPIKey(apiKey:String):void{
+			API_KEY=apiKey;
+		}
+		//- EVENT HANDLERS ----------------------------------------------------------------------------------------
+	
+		
+	
+		//- GETTERS & SETTERS -------------------------------------------------------------------------------------
 		public static function get apiKeyUrlQuery() : String {
 			if(API_KEY == "" || API_KEY == "<insert API key here>") {
 				return "";
@@ -37,13 +45,6 @@ package be.boulevart.google.apicore {
 				return "&key=" + API_KEY;
 			}
 		}
-
-		//- EVENT HANDLERS ----------------------------------------------------------------------------------------
-	
-		
-	
-		//- GETTERS & SETTERS -------------------------------------------------------------------------------------
-	
 		
 	
 		//- HELPERS -----------------------------------------------------------------------------------------------
