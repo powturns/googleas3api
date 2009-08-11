@@ -20,7 +20,6 @@ package be.boulevart.google.weather {
 	import flash.net.URLLoader;
 	import flash.net.URLRequest;
 
-	import be.boulevart.google.apicore.GoogleApiKeyStore;
 	import be.boulevart.google.events.GoogleApiEvent;
 	import be.boulevart.google.weather.data.GoogleWeatherData;
 	import be.boulevart.google.weather.data.types.GoogleWeatherCurrentCondition;
@@ -52,9 +51,7 @@ package be.boulevart.google.weather {
 			if(useProxy) {
 				url = "http://www.joristimmerman.be/proxy/proxy.php?url=" + url
 			}
-			
-			url += GoogleApiKeyStore.apiKeyUrlQuery
-			
+						
 			var loader : URLLoader = new URLLoader()
 			var request : URLRequest = new URLRequest(url)
 			
@@ -99,7 +96,7 @@ package be.boulevart.google.weather {
 			
 			var icon : String = "";
 			if(String(xml.icon.@data) != "") {
-				icon = "http://www.google.com/ig" + String(xml.icon.@data);
+				icon = "http://www.google.com/" + String(xml.icon.@data);
 			}
 			
 			var wind : String = xml.wind_condition.@data
@@ -116,7 +113,7 @@ package be.boulevart.google.weather {
 				var dag : String = String(xmlCondition.day_of_week.@data);
 				var minimum : int = int(xmlCondition.low.@data);
 				var maximum : int = int(xmlCondition.high.@data);
-				var icoon : String = "http://www.google.com/ig" + String(xmlCondition.icon.@data);
+				var icoon : String = "http://www.google.com/" + String(xmlCondition.icon.@data);
 				var omschrijving : String = String(xmlCondition.condition.@data);
 				
 				forecasts.push(new GoogleWeatherForecastConditions(dag , minimum , maximum , icoon , omschrijving));
