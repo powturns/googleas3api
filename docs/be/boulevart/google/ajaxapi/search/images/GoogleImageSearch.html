@@ -10,7 +10,7 @@
 <body>
 <script type="text/javascript" language="javascript" src="../../../../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../../../../cookies.js"></script><script type="text/javascript" language="javascript">
 <!--
-				asdocTitle = 'GoogleImageSearch - API Documentation';
+				asdocTitle = 'GoogleImageSearch - 'Google AS3 API Library'';
 				var baseRef = '../../../../../../';
 				window.onload = configPage;
 			--></script>
@@ -56,7 +56,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#search()">search</a>(searchString:String, startValue:int = 0, safeMode:String, size:String = "", colorization:String = "", imageType:String = "", filetype:String = "", restrictToCreativeCommons:Boolean = false, lang:String = ""):void</div>
+<a class="signatureLink" href="#search()">search</a>(searchString:String, startValue:int = 0, safeMode:String, size:String = "", colorization:String = "", imageColor:String = "", imageType:String = "", filetype:String = "", restrictToCreativeCommons:Boolean = false, lang:String = "", restrictToDomain:String = ""):void</div>
 <div class="summaryTableDescription">
    Start search operation, when operation is done, will dispatch an GoogleSearchEvent.IMAGE_SEARCH_RESULT event with an array of GoogleImage-objects.</div>
 </td><td class="summaryTableOwnerCol">GoogleImageSearch</td>
@@ -77,7 +77,7 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function search(searchString:String, startValue:int = 0, safeMode:String, size:String = "", colorization:String = "", imageType:String = "", filetype:String = "", restrictToCreativeCommons:Boolean = false, lang:String = ""):void</code><p>
+<code>public function search(searchString:String, startValue:int = 0, safeMode:String, size:String = "", colorization:String = "", imageColor:String = "", imageType:String = "", filetype:String = "", restrictToCreativeCommons:Boolean = false, lang:String = "", restrictToDomain:String = ""):void</code><p>
    Start search operation, when operation is done, will dispatch an GoogleSearchEvent.IMAGE_SEARCH_RESULT event with an array of GoogleImage-objects.
    Will deliver 8 results max, you can get more using the startValue param. (paging)
    </p><span class="label">Parameters</span>
@@ -97,14 +97,14 @@ showHideInherited();
 <td class="paramSpacer">&nbsp;</td>
 </tr>
 <tr>
-<td width="20px"></td><td><code><span class="label">safeMode</span>:String</code> &mdash; Restrict results with safety filter, you can find all values in GoogleImageSafeMode (package data.type)
+<td width="20px"></td><td><code><span class="label">safeMode</span>:String</code> &mdash; This optional argument supplies the search safety level, you can find all values in GoogleImageSafeMode (package data.type)
    </td>
 </tr>
 <tr>
 <td class="paramSpacer">&nbsp;</td>
 </tr>
 <tr>
-<td width="20px"></td><td><code><span class="label">size</span>:String</code> (default = "<code></code>")<code></code> &mdash; Restrict results to images of a certain sizer, you can find all values in GoogleImageSize (package data.type)
+<td width="20px"></td><td><code><span class="label">size</span>:String</code> (default = "<code></code>")<code></code> &mdash; Restrict results to images of a certain size, you can find all values in GoogleImageSize (package data.type)
    </td>
 </tr>
 <tr>
@@ -112,6 +112,13 @@ showHideInherited();
 </tr>
 <tr>
 <td width="20px"></td><td><code><span class="label">colorization</span>:String</code> (default = "<code></code>")<code></code> &mdash; Restrict results to images of a certain colorization, you can find all values in GoogleImageColorization (package data.type)
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">imageColor</span>:String</code> (default = "<code></code>")<code></code> &mdash; NEW This optional argument tells the image search system to filter the search to images of the specified color, you can find all allowed values in GoogleImageColor (package data.type)
    </td>
 </tr>
 <tr>
@@ -140,6 +147,13 @@ showHideInherited();
 </tr>
 <tr>
 <td width="20px"></td><td><code><span class="label">lang</span>:String</code> (default = "<code></code>")<code></code> &mdash; set main language using language code
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">restrictToDomain</span>:String</code> (default = "<code></code>")<code></code> &mdash; NEW This optional argument tells the image search system to restrict the search to images within the specified domain <br/> Note: This restriction may restrict results to images found on pages AT the given URL and/or images WITH the given URL. 
    </td>
 </tr>
 </table>

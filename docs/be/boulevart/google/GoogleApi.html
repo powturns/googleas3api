@@ -4,13 +4,13 @@
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
 <link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
-<meta content="GoogleApi,be.boulevart.google.GoogleApi,blogs,books,feeds,images,local,news,patents,suggest,videos,weather,web" name="keywords">
+<meta content="GoogleApi,be.boulevart.google.GoogleApi,blogs,books,feeds,images,local,news,patents,suggest,translate,videos,weather,web" name="keywords">
 <title>be.boulevart.google.GoogleApi</title>
 </head>
 <body>
 <script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
 <!--
-				asdocTitle = 'GoogleApi - API Documentation';
+				asdocTitle = 'GoogleApi - 'Google AS3 API Library'';
 				var baseRef = '../../../';
 				window.onload = configPage;
 			--></script>
@@ -91,6 +91,11 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 </td><td class="summaryTableOwnerCol">GoogleApi</td>
 </tr>
 <tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#translate">translate</a> : <a href="ajaxapi/translation/GoogleTranslation.html">GoogleTranslation</a>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol">GoogleApi</td>
+</tr>
+<tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#videos">videos</a> : <a href="ajaxapi/search/videos/GoogleVideoSearch.html">GoogleVideoSearch</a>
 <div class="summaryTableDescription"></div>
 </td><td class="summaryTableOwnerCol">GoogleApi</td>
@@ -117,7 +122,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#GoogleApi()">GoogleApi</a>()</div>
+<a class="signatureLink" href="#GoogleApi()">GoogleApi</a>(apiKey:String = "")</div>
 <div class="summaryTableDescription"></div>
 </td><td class="summaryTableOwnerCol">GoogleApi</td>
 </tr>
@@ -242,6 +247,20 @@ showHideInherited();
 <code>&nbsp;&nbsp;&nbsp;&nbsp;public function set suggest(value:<a href="suggest/GoogleSuggest.html">GoogleSuggest</a>):void</code>
 <br>
 </div>
+<a name="translate"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">translate</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>translate:<a href="ajaxapi/translation/GoogleTranslation.html">GoogleTranslation</a></code>&nbsp;&nbsp;[read-write]<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get translate():<a href="ajaxapi/translation/GoogleTranslation.html">GoogleTranslation</a></code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set translate(value:<a href="ajaxapi/translation/GoogleTranslation.html">GoogleTranslation</a>):void</code>
+<br>
+</div>
 <a name="videos"></a>
 <table cellspacing="0" cellpadding="0" class="detailHeader">
 <tr>
@@ -293,7 +312,12 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function GoogleApi()</code>
+<code>public function GoogleApi(apiKey:String = "")</code><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">apiKey</span>:String</code> (default = "<code></code>")<code></code></td>
+</tr>
+</table>
 </div>
 <br>
 <br>

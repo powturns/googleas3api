@@ -1,8 +1,8 @@
 package be.boulevart.google.ajaxapi.feeds.data {
 
 	public class GoogleFeedLookupResult {
-		private var _url : String
-		private var _query : String
+		private var _url : String;
+		private var _query : String;
 
 		public function get query() : String {
 			return _url;

@@ -1,6 +1,6 @@
 package be.boulevart.google.ajaxapi.translation.data {
 
-	/**	 * @author joris	 */	public class GoogleTranslationResult {		private var __result : String		private var __orig : String		private var __from : String		private var __to : String
+	/**	 * @author joris	 */	public class GoogleTranslationResult {		private var __result : String;		private var __orig : String;		private var __from : String;		private var __to : String;
 
 		public  function get result() : String {			return __result;		}
 

@@ -10,7 +10,7 @@
 <body>
 <script type="text/javascript" language="javascript" src="../../../../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../../../../cookies.js"></script><script type="text/javascript" language="javascript">
 <!--
-				asdocTitle = 'GoogleWebSearch - API Documentation';
+				asdocTitle = 'GoogleWebSearch - 'Google AS3 API Library'';
 				var baseRef = '../../../../../../';
 				window.onload = configPage;
 			--></script>
@@ -56,7 +56,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#search()">search</a>(searchString:String, start:int = 0, lang:String = ""):void</div>
+<a class="signatureLink" href="#search()">search</a>(searchString:String, start:int = 0, lang:String = "", safeMode:String = "", languageRestrict:String = "", duplicateFilter:Boolean = true, countryCode:String = "", customSearchEngineID:String = "", customSearchEngineRef:String = ""):void</div>
 <div class="summaryTableDescription">
    Start search operation, when operation is done, will dispatch an GoogleSearchEvent.WEB_SEARCH_RESULT event with an array of GoogleWebSearchItem-objects.</div>
 </td><td class="summaryTableOwnerCol">GoogleWebSearch</td>
@@ -77,7 +77,7 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function search(searchString:String, start:int = 0, lang:String = ""):void</code><p>
+<code>public function search(searchString:String, start:int = 0, lang:String = "", safeMode:String = "", languageRestrict:String = "", duplicateFilter:Boolean = true, countryCode:String = "", customSearchEngineID:String = "", customSearchEngineRef:String = ""):void</code><p>
    Start search operation, when operation is done, will dispatch an GoogleSearchEvent.WEB_SEARCH_RESULT event with an array of GoogleWebSearchItem-objects.
    Will deliver 8 results max, you can get more using the start param. (paging)
    </p><span class="label">Parameters</span>
@@ -98,6 +98,48 @@ showHideInherited();
 </tr>
 <tr>
 <td width="20px"></td><td><code><span class="label">lang</span>:String</code> (default = "<code></code>")<code></code> &mdash; set main language using language code
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">safeMode</span>:String</code> (default = "<code></code>")<code></code> &mdash; NEW This optional argument supplies the search safety level, you can find all values in GoogleWebSafeMode (package data.type)
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">languageRestrict</span>:String</code> (default = "<code></code>")<code></code> &mdash; NEW This optional argument allows the caller to restrict the search to documents written in a particular language (e.g., lr=lang_ja). This list contains the permissible set of values.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">duplicateFilter</span>:Boolean</code> (default = <code>true</code>)<code></code> &mdash; NEW This optional argument controls turning on or off the duplicate content filter (default on)
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">countryCode</span>:String</code> (default = "<code></code>")<code></code> &mdash; NEW This optional argument allows the caller to tailor the results to a specific country. The value should be a valid country code (e.g. uk, de, etc.). If this argument is not present, then the system will us a value based on the domain used to load the API (e.g. http://www.google.com/jsapi). If the API loader was not used, a value of "us" is assumed.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">customSearchEngineID</span>:String</code> (default = "<code></code>")<code></code> &mdash; NEW This optional argument supplies the unique id for the Custom Search Engine that should be used for this request (e.g., customSearchEngineID=000455696194071821846:reviews).
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">customSearchEngineRef</span>:String</code> (default = "<code></code>")<code></code> &mdash; NEW This optional argument supplies the url of a linked Custom Search Engine specification that should be used to satisfy this request (e.g., cref=http%3A%2F%2Fwww.google.com%2Fcse%2Fsamples%2Fvegetarian.xml).
    </td>
 </tr>
 </table>

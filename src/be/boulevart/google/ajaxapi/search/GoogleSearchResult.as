@@ -1,9 +1,9 @@
 package be.boulevart.google.ajaxapi.search {
 	public class GoogleSearchResult {
-		private var _results : Array
-		private var _estimatedNumResults : int = 0
-		private var _currentPageIndex : int = 0
-		private var _numPages : int = 1
+		private var _results : Array;
+		private var _estimatedNumResults : int = 0;
+		private var _currentPageIndex : int = 0;
+		private var _numPages : int = 1;
 		public  function get results() : Array {
 			return _results;
 		}

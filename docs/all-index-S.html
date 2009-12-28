@@ -9,7 +9,7 @@
 <body>
 <script type="text/javascript" language="javascript" src="asdoc.js"></script><script type="text/javascript" language="javascript" src="cookies.js"></script><script type="text/javascript" language="javascript">
 <!--
-				asdocTitle = 'S Index - API Documentation';
+				asdocTitle = 'S Index - 'Google AS3 API Library'';
 				var baseRef = '';
 				window.onload = configPage;
 			--></script>
@@ -55,7 +55,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("SÂ
    Start search operation, when operation is done, will dispatch an GoogleSearchEvent.BOOK_SEARCH_RESULT event with an array of GoogleBook-objects.</td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('be/boulevart/google/ajaxapi/search/images/class-list.html');" href="be/boulevart/google/ajaxapi/search/images/GoogleImageSearch.html#search()">search</a>(searchString, startValue, safeMode, size, colorization, imageType, filetype, restrictToCreativeCommons, lang) &mdash; Method in class be.boulevart.google.ajaxapi.search.images.<a onclick="javascript:loadClassListFrame('be/boulevart/google/ajaxapi/search/images/class-list.html');" href="be/boulevart/google/ajaxapi/search/images/GoogleImageSearch.html">GoogleImageSearch</a></td>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('be/boulevart/google/ajaxapi/search/images/class-list.html');" href="be/boulevart/google/ajaxapi/search/images/GoogleImageSearch.html#search()">search</a>(searchString, startValue, safeMode, size, colorization, imageColor, imageType, filetype, restrictToCreativeCommons, lang, restrictToDomain) &mdash; Method in class be.boulevart.google.ajaxapi.search.images.<a onclick="javascript:loadClassListFrame('be/boulevart/google/ajaxapi/search/images/class-list.html');" href="be/boulevart/google/ajaxapi/search/images/GoogleImageSearch.html">GoogleImageSearch</a></td>
 </tr>
 <tr>
 <td width="20"></td><td>
@@ -69,7 +69,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("SÂ
    Start search operation, when operation is done, will dispatch an GoogleSearchEvent.LOCAL_SEARCH_RESULT event with an array of GoogleLocalSearchItem-objects.</td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('be/boulevart/google/ajaxapi/search/news/class-list.html');" href="be/boulevart/google/ajaxapi/search/news/GoogleNewsSearch.html#search()">search</a>(searchString, startValue, scoring, location, googleNewsTopic, edition, lang) &mdash; Method in class be.boulevart.google.ajaxapi.search.news.<a onclick="javascript:loadClassListFrame('be/boulevart/google/ajaxapi/search/news/class-list.html');" href="be/boulevart/google/ajaxapi/search/news/GoogleNewsSearch.html">GoogleNewsSearch</a></td>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('be/boulevart/google/ajaxapi/search/news/class-list.html');" href="be/boulevart/google/ajaxapi/search/news/GoogleNewsSearch.html#search()">search</a>(searchString, startValue, scoring, location, topic, edition, lang) &mdash; Method in class be.boulevart.google.ajaxapi.search.news.<a onclick="javascript:loadClassListFrame('be/boulevart/google/ajaxapi/search/news/class-list.html');" href="be/boulevart/google/ajaxapi/search/news/GoogleNewsSearch.html">GoogleNewsSearch</a></td>
 </tr>
 <tr>
 <td width="20"></td><td>
@@ -90,7 +90,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("SÂ
    Start search operation, when operation is done, will dispatch an GoogleSearchEvent.VIDEO_SEARCH_RESULT event with an array of GoogleVideo-objects.</td>
 </tr>
 <tr>
-<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('be/boulevart/google/ajaxapi/search/web/class-list.html');" href="be/boulevart/google/ajaxapi/search/web/GoogleWebSearch.html#search()">search</a>(searchString, start, lang) &mdash; Method in class be.boulevart.google.ajaxapi.search.web.<a onclick="javascript:loadClassListFrame('be/boulevart/google/ajaxapi/search/web/class-list.html');" href="be/boulevart/google/ajaxapi/search/web/GoogleWebSearch.html">GoogleWebSearch</a></td>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('be/boulevart/google/ajaxapi/search/web/class-list.html');" href="be/boulevart/google/ajaxapi/search/web/GoogleWebSearch.html#search()">search</a>(searchString, start, lang, safeMode, languageRestrict, duplicateFilter, countryCode, customSearchEngineID, customSearchEngineRef) &mdash; Method in class be.boulevart.google.ajaxapi.search.web.<a onclick="javascript:loadClassListFrame('be/boulevart/google/ajaxapi/search/web/class-list.html');" href="be/boulevart/google/ajaxapi/search/web/GoogleWebSearch.html">GoogleWebSearch</a></td>
 </tr>
 <tr>
 <td width="20"></td><td>
@@ -104,12 +104,58 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("SÂ
    Search a given city in a country (optional) and get the data in a certain language (optional).</td>
 </tr>
 <tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('be/boulevart/google/apicore/class-list.html');" href="be/boulevart/google/apicore/GoogleAPIServiceURL.html#SEARCH_BLOGS_SERVICE">SEARCH_BLOGS_SERVICE</a> &mdash; Constant static property in class be.boulevart.google.apicore.<a onclick="javascript:loadClassListFrame('be/boulevart/google/apicore/class-list.html');" href="be/boulevart/google/apicore/GoogleAPIServiceURL.html">GoogleAPIServiceURL</a></td>
+</tr>
+<tr>
+<td width="20"></td><td></td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('be/boulevart/google/apicore/class-list.html');" href="be/boulevart/google/apicore/GoogleAPIServiceURL.html#SEARCH_BOOKS_SERVICE">SEARCH_BOOKS_SERVICE</a> &mdash; Constant static property in class be.boulevart.google.apicore.<a onclick="javascript:loadClassListFrame('be/boulevart/google/apicore/class-list.html');" href="be/boulevart/google/apicore/GoogleAPIServiceURL.html">GoogleAPIServiceURL</a></td>
+</tr>
+<tr>
+<td width="20"></td><td></td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('be/boulevart/google/apicore/class-list.html');" href="be/boulevart/google/apicore/GoogleAPIServiceURL.html#SEARCH_IMAGES_SERVICE">SEARCH_IMAGES_SERVICE</a> &mdash; Constant static property in class be.boulevart.google.apicore.<a onclick="javascript:loadClassListFrame('be/boulevart/google/apicore/class-list.html');" href="be/boulevart/google/apicore/GoogleAPIServiceURL.html">GoogleAPIServiceURL</a></td>
+</tr>
+<tr>
+<td width="20"></td><td></td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('be/boulevart/google/apicore/class-list.html');" href="be/boulevart/google/apicore/GoogleAPIServiceURL.html#SEARCH_LOCAL_SERVICE">SEARCH_LOCAL_SERVICE</a> &mdash; Constant static property in class be.boulevart.google.apicore.<a onclick="javascript:loadClassListFrame('be/boulevart/google/apicore/class-list.html');" href="be/boulevart/google/apicore/GoogleAPIServiceURL.html">GoogleAPIServiceURL</a></td>
+</tr>
+<tr>
+<td width="20"></td><td></td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('be/boulevart/google/apicore/class-list.html');" href="be/boulevart/google/apicore/GoogleAPIServiceURL.html#SEARCH_NEWS_SERVICE">SEARCH_NEWS_SERVICE</a> &mdash; Constant static property in class be.boulevart.google.apicore.<a onclick="javascript:loadClassListFrame('be/boulevart/google/apicore/class-list.html');" href="be/boulevart/google/apicore/GoogleAPIServiceURL.html">GoogleAPIServiceURL</a></td>
+</tr>
+<tr>
+<td width="20"></td><td></td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('be/boulevart/google/apicore/class-list.html');" href="be/boulevart/google/apicore/GoogleAPIServiceURL.html#SEARCH_PATENTS_SERVICE">SEARCH_PATENTS_SERVICE</a> &mdash; Constant static property in class be.boulevart.google.apicore.<a onclick="javascript:loadClassListFrame('be/boulevart/google/apicore/class-list.html');" href="be/boulevart/google/apicore/GoogleAPIServiceURL.html">GoogleAPIServiceURL</a></td>
+</tr>
+<tr>
+<td width="20"></td><td></td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('be/boulevart/google/apicore/class-list.html');" href="be/boulevart/google/apicore/GoogleAPIServiceURL.html#SEARCH_VIDEOS_SERVICE">SEARCH_VIDEOS_SERVICE</a> &mdash; Constant static property in class be.boulevart.google.apicore.<a onclick="javascript:loadClassListFrame('be/boulevart/google/apicore/class-list.html');" href="be/boulevart/google/apicore/GoogleAPIServiceURL.html">GoogleAPIServiceURL</a></td>
+</tr>
+<tr>
+<td width="20"></td><td></td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('be/boulevart/google/apicore/class-list.html');" href="be/boulevart/google/apicore/GoogleAPIServiceURL.html#SEARCH_WEB_SERVICE">SEARCH_WEB_SERVICE</a> &mdash; Constant static property in class be.boulevart.google.apicore.<a onclick="javascript:loadClassListFrame('be/boulevart/google/apicore/class-list.html');" href="be/boulevart/google/apicore/GoogleAPIServiceURL.html">GoogleAPIServiceURL</a></td>
+</tr>
+<tr>
+<td width="20"></td><td></td>
+</tr>
+<tr>
 <td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('be/boulevart/google/apicore/class-list.html');" href="be/boulevart/google/apicore/GoogleApiKeyStore.html#setAPIKey()">setAPIKey</a>(apiKey) &mdash; Static method in class be.boulevart.google.apicore.<a onclick="javascript:loadClassListFrame('be/boulevart/google/apicore/class-list.html');" href="be/boulevart/google/apicore/GoogleApiKeyStore.html">GoogleApiKeyStore</a></td>
 </tr>
 <tr>
-<td width="20"></td><td>
-   Set an api key to store
-   </td>
+<td width="20"></td><td></td>
 </tr>
 <tr>
 <td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('be/boulevart/google/ajaxapi/search/images/data/types/class-list.html');" href="be/boulevart/google/ajaxapi/search/images/data/types/GoogleImageSize.html#SMALL">SMALL</a> &mdash; Constant static property in class be.boulevart.google.ajaxapi.search.images.data.types.<a onclick="javascript:loadClassListFrame('be/boulevart/google/ajaxapi/search/images/data/types/class-list.html');" href="be/boulevart/google/ajaxapi/search/images/data/types/GoogleImageSize.html">GoogleImageSize</a></td>
@@ -158,6 +204,12 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("SÂ
 </tr>
 <tr>
 <td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('be/boulevart/google/events/class-list.html');" href="be/boulevart/google/events/GoogleApiEvent.html#SUGGESTIONS_RESULT">SUGGESTIONS_RESULT</a> &mdash; Constant static property in class be.boulevart.google.events.<a onclick="javascript:loadClassListFrame('be/boulevart/google/events/class-list.html');" href="be/boulevart/google/events/GoogleApiEvent.html">GoogleApiEvent</a></td>
+</tr>
+<tr>
+<td width="20"></td><td></td>
+</tr>
+<tr>
+<td colspan="2" class="idxrow"><a onclick="javascript:loadClassListFrame('be/boulevart/google/apicore/class-list.html');" href="be/boulevart/google/apicore/GoogleAPIServiceURL.html#SUGGEST_SERVICE">SUGGEST_SERVICE</a> &mdash; Constant static property in class be.boulevart.google.apicore.<a onclick="javascript:loadClassListFrame('be/boulevart/google/apicore/class-list.html');" href="be/boulevart/google/apicore/GoogleAPIServiceURL.html">GoogleAPIServiceURL</a></td>
 </tr>
 <tr>
 <td width="20"></td><td></td>

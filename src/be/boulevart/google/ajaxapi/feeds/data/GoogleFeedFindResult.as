@@ -1,8 +1,8 @@
 package be.boulevart.google.ajaxapi.feeds.data {
 
 	public class GoogleFeedFindResult {
-		private var _entries : Array = new Array()
-		private var _query : String
+		private var _entries : Array = new Array();
+		private var _query : String;
 
 		public function get query() : String {
 			return _query;

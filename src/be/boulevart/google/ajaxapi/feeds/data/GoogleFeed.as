@@ -1,12 +1,12 @@
 package be.boulevart.google.ajaxapi.feeds.data {
 
 	public class GoogleFeed {
-		private var _author : String
-		private var _description : String
-		private var _link : String
-		private var _title : String
-		private var _feedType : String
-		private var _entries : Array = new Array()
+		private var _author : String;
+		private var _description : String;
+		private var _link : String;
+		private var _title : String;
+		private var _feedType : String;
+		private var _entries : Array = new Array();
 
 		public function get author() : String {
 			return _author;

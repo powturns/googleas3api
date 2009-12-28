@@ -2,7 +2,7 @@
  * GOOGLE API - AS3 LIBRARY
  * 
  * @author Joris Timmerman
- * @version 2.0
+ * @version 2.1
  * 
  * GoogleApiKeyStore - If you have a Google API key, filled it in here
  * Build by Joris Timmerman, these classes uses the Google API
@@ -14,43 +14,35 @@
  * */
 
 package be.boulevart.google.apicore {
-
-	public class GoogleApiKeyStore {
+	public class GoogleApiKeyStore {
 		//- PRIVATE & PROTECTED VARIABLES -------------------------------------------------------------------------
 
 		
 		//Sign up for you API key at: http://code.google.com/intl/us-en/apis/ajaxsearch/signup.html
 		//- PUBLIC & INTERNAL VARIABLES ---------------------------------------------------------------------------
-		public static var API_KEY : String = "<insert API key here>"
-
-		//- CONSTRUCTOR	-------------------------------------------------------------------------------------------
-	
+		public static var API_KEY : String = "<insert API key here>";
+		//- CONSTRUCTOR	-------------------------------------------------------------------------------------------
 		//- PRIVATE & PROTECTED METHODS ---------------------------------------------------------------------------
 		
 		
 		
 		//- PUBLIC & INTERNAL METHODS -----------------------------------------------------------------------------
-		public static function setAPIKey(apiKey:String):void{
-			API_KEY=apiKey;
+		public static function setAPIKey(apiKey : String) : void {
+			API_KEY = apiKey;
 		}
-		//- EVENT HANDLERS ----------------------------------------------------------------------------------------
+		//- EVENT HANDLERS ----------------------------------------------------------------------------------------
 	
 		
 	
 		//- GETTERS & SETTERS -------------------------------------------------------------------------------------
-		public static function get apiKeyUrlQuery() : String {
+		public static function get keyIsSet() : Boolean {
 			if(API_KEY == "" || API_KEY == "<insert API key here>") {
-				return "";
+				return false;
 			}else {
-				return "&key=" + API_KEY;
+				return true;
 			}
 		}
 		
-	
-		//- HELPERS -----------------------------------------------------------------------------------------------
-		public function toString() : String {
-			return "be.boulevart.google.apicore.GoogleApiKeyStore";
-		}
 	
 //- END CLASS ---------------------------------------------------------------------------------------------
 	}

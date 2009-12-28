@@ -10,7 +10,7 @@
 <body>
 <script type="text/javascript" language="javascript" src="../../../../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../../../../cookies.js"></script><script type="text/javascript" language="javascript">
 <!--
-				asdocTitle = 'GoogleLocalSearch - API Documentation';
+				asdocTitle = 'GoogleLocalSearch - 'Google AS3 API Library'';
 				var baseRef = '../../../../../../';
 				window.onload = configPage;
 			--></script>
@@ -56,7 +56,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#search()">search</a>(searchString:String, startValue:int = 0, centerPointOfSearch:String = "0,0", typeOfListing:String = "", lang:String = ""):void</div>
+<a class="signatureLink" href="#search()">search</a>(searchString:String, startValue:int = 0, centerPointOfSearch:Point = null, typeOfListing:String = "", lang:String = ""):void</div>
 <div class="summaryTableDescription">
    Start search operation, when operation is done, will dispatch an GoogleSearchEvent.LOCAL_SEARCH_RESULT event with an array of GoogleLocalSearchItem-objects.</div>
 </td><td class="summaryTableOwnerCol">GoogleLocalSearch</td>
@@ -77,7 +77,7 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function search(searchString:String, startValue:int = 0, centerPointOfSearch:String = "0,0", typeOfListing:String = "", lang:String = ""):void</code><p>
+<code>public function search(searchString:String, startValue:int = 0, centerPointOfSearch:Point = null, typeOfListing:String = "", lang:String = ""):void</code><p>
    Start search operation, when operation is done, will dispatch an GoogleSearchEvent.LOCAL_SEARCH_RESULT event with an array of GoogleLocalSearchItem-objects.
    Will deliver 8 results max, you can get more using the startValue param. (paging)
    </p><span class="label">Parameters</span>
@@ -97,14 +97,14 @@ showHideInherited();
 <td class="paramSpacer">&nbsp;</td>
 </tr>
 <tr>
-<td width="20px"></td><td><code><span class="label">centerPointOfSearch</span>:String</code> (default = "<code>0,0</code>")<code></code> &mdash; This optional argument supplies the search center point for a local search. It's value is a comma seperated latitude/longitude pair, e.g., sll=48.8565,2.3509.
+<td width="20px"></td><td><code><span class="label">centerPointOfSearch</span>:Point</code> (default = <code>null</code>)<code></code> &mdash; UPDATED This optional argument supplies the search center point for a local search. It's value representing latitude/longitude pair, e.g., new Point(48.8565,2.3509).
    </td>
 </tr>
 <tr>
 <td class="paramSpacer">&nbsp;</td>
 </tr>
 <tr>
-<td width="20px"></td><td><code><span class="label">typeOfListing</span>:String</code> (default = "<code></code>")<code></code> &mdash; This optional argument specifies which type of listing the user is interested in
+<td width="20px"></td><td><code><span class="label">typeOfListing</span>:String</code> (default = "<code></code>")<code></code> &mdash; This optional argument specifies which type of listing the user is interested in, you can find the values in GoogleLocalSearchListingType (data.type)
    </td>
 </tr>
 <tr>

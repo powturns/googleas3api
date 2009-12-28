@@ -1,9 +1,9 @@
 package be.boulevart.google.ajaxapi.translation.data {
 
 	public class GoogleLanguageDetectionResult {
-		private var _lang : String
-		private var _ir : Boolean
-		private var _conf : Number
+		private var _lang : String;
+		private var _ir : Boolean;
+		private var _conf : Number;
 
 		public function GoogleLanguageDetectionResult() {
 		}

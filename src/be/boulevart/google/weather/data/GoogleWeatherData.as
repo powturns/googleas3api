@@ -1,6 +1,6 @@
 package be.boulevart.google.weather.data {
 	import be.boulevart.google.weather.data.types.GoogleWeatherCurrentCondition;	import be.boulevart.google.weather.data.types.GoogleWeatherForecastInformation;	
-	public class GoogleWeatherData {
+	public class GoogleWeatherData {
 		private var _forecastInfo : GoogleWeatherForecastInformation;
 		private var _currentCondition : GoogleWeatherCurrentCondition;
 		private var _forecastConditions : Array;

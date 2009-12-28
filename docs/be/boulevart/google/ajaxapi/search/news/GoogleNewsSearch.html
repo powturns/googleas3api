@@ -10,7 +10,7 @@
 <body>
 <script type="text/javascript" language="javascript" src="../../../../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../../../../cookies.js"></script><script type="text/javascript" language="javascript">
 <!--
-				asdocTitle = 'GoogleNewsSearch - API Documentation';
+				asdocTitle = 'GoogleNewsSearch - 'Google AS3 API Library'';
 				var baseRef = '../../../../../../';
 				window.onload = configPage;
 			--></script>
@@ -63,7 +63,7 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 <tr class="">
 <td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
 <div class="summarySignature">
-<a class="signatureLink" href="#search()">search</a>(searchString:String, startValue:int = 0, scoring:String = "", location:String = "", googleNewsTopic:String = "", edition:String = "", lang:String = ""):void</div>
+<a class="signatureLink" href="#search()">search</a>(searchString:String, startValue:int = 0, scoring:String = "", location:String = "", topic:String = "", edition:String = "", lang:String = ""):void</div>
 <div class="summaryTableDescription">
    </div>
 </td><td class="summaryTableOwnerCol">GoogleNewsSearch</td>
@@ -95,7 +95,7 @@ showHideInherited();
 </tr>
 </table>
 <div class="detailBody">
-<code>public function search(searchString:String, startValue:int = 0, scoring:String = "", location:String = "", googleNewsTopic:String = "", edition:String = "", lang:String = ""):void</code><p>
+<code>public function search(searchString:String, startValue:int = 0, scoring:String = "", location:String = "", topic:String = "", edition:String = "", lang:String = ""):void</code><p>
    </p><span class="label">Parameters</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
@@ -113,7 +113,7 @@ showHideInherited();
 <td class="paramSpacer">&nbsp;</td>
 </tr>
 <tr>
-<td width="20px"></td><td><code><span class="label">scoring</span>:String</code> (default = "<code></code>")<code></code> &mdash; This optional argument tells the news search system to scope search results to a particular topic.
+<td width="20px"></td><td><code><span class="label">scoring</span>:String</code> (default = "<code></code>")<code></code> &mdash; This optional argument tells the news search system to scope search results to a particular topic. You can find the possible values in GoogleNewsTopic (data.types); Topics vary slightly from edition to edition. E.g., in African editions like Namibia or Zimbabwe(&ned=en_na, &ned=en_zw) the topic af is available and represents the African topic. In general, if you are viewing an edition of Google News and see a topic of interest, click on the topic header and view the &topic argument in the browser's address bar.
    </td>
 </tr>
 <tr>
@@ -127,7 +127,7 @@ showHideInherited();
 <td class="paramSpacer">&nbsp;</td>
 </tr>
 <tr>
-<td width="20px"></td><td><code><span class="label">googleNewsTopic</span>:String</code> (default = "<code></code>")<code></code></td>
+<td width="20px"></td><td><code><span class="label">topic</span>:String</code> (default = "<code></code>")<code></code></td>
 </tr>
 <tr>
 <td class="paramSpacer">&nbsp;</td>
